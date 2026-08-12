@@ -14,11 +14,11 @@ export default function NotFoundPage() {
         }}
         className="mx-auto max-w-2xl text-center"
       >
-        <p className="font-heading text-8xl font-extrabold tracking-tight text-[#748c70] sm:text-9xl">
+        <p className="font-heading text-6xl font-extrabold tracking-tight text-[#748c70] sm:text-7xl">
           404
         </p>
 
-        <h1 className="mt-6 font-heading text-3xl font-extrabold tracking-tight text-[#0a192f] sm:text-5xl">
+        <h1 className="mt-5 font-heading text-3xl font-extrabold tracking-tight text-[#0a192f] sm:text-5xl">
           Page not found
         </h1>
 

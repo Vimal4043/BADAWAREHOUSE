@@ -20,18 +20,24 @@ function Brand({ dark, onClick }) {
       onClick={onClick}
       className="flex items-center gap-2.5"
     >
+      {/* Logo */}
       <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0a192f] font-heading text-base font-extrabold text-[#d4e0b3]">
         B
       </span>
 
+      {/* Brand text */}
       <span className="flex flex-col leading-none">
-        <span className="font-heading text-lg font-extrabold tracking-tight">
+        <span
+          className={`font-heading text-lg font-extrabold tracking-tight text-white ${
+            dark ? "lg:text-white" : "lg:text-[#0a192f]"
+          }`}
+        >
           {BRAND.name}
         </span>
 
         <span
-          className={`mt-1 text-[9px] font-semibold uppercase tracking-[0.28em] ${
-            dark ? "text-white/50" : "text-[#748c70]"
+          className={`mt-1 text-[9px] font-semibold uppercase tracking-[0.28em] text-white/50 ${
+            dark ? "lg:text-white/50" : "lg:text-[#748c70]"
           }`}
         >
           {BRAND.tagline}
@@ -43,16 +49,24 @@ function Brand({ dark, onClick }) {
 
 export default function Navbar() {
   const { pathname } = useLocation();
+
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
 
     onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
 
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -63,18 +77,34 @@ export default function Navbar() {
     };
   }, [open]);
 
+  /*
+   * Desktop navbar behavior:
+   * Home + top     = transparent
+   * Home + scroll  = white
+   * Other pages    = white
+   *
+   * Mobile/tablet ignores this and stays navy.
+   */
   const dark = pathname === "/" && !scrolled;
 
   return (
     <header
       data-testid="navbar"
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        dark
-          ? "bg-transparent text-white"
-          : "bg-white/90 text-[#0a192f] shadow-[0_1px_0_rgb(10,25,47,0.06)] backdrop-blur-md"
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500
+
+        /* MOBILE / TABLET — ALWAYS NAVY */
+        bg-[#0a192f] text-white shadow-none
+
+        /* DESKTOP — USE EXISTING SCROLL BEHAVIOR */
+        ${
+          dark
+            ? "lg:bg-transparent lg:text-white lg:shadow-none"
+            : "lg:bg-white/90 lg:text-[#0a192f] lg:shadow-[0_1px_0_rgb(10,25,47,0.06)] lg:backdrop-blur-md"
+        }
+      `}
     >
       <div className="flex h-19 items-center justify-between px-5 md:px-10">
+        {/* Brand */}
         <Brand dark={dark} />
 
         {/* Desktop navigation */}
@@ -102,6 +132,7 @@ export default function Navbar() {
             }`}
           >
             <Phone className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+
             Enquire
           </a>
         </div>
@@ -112,7 +143,8 @@ export default function Navbar() {
           data-testid="nav-mobile-toggle"
           onClick={() => setOpen(true)}
           aria-label="Open menu"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full text-inherit lg:hidden"
+          aria-expanded={open}
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full text-white transition-colors hover:bg-white/10 lg:hidden"
         >
           <Menu className="h-6 w-6" />
         </button>
@@ -131,13 +163,16 @@ export default function Navbar() {
           >
             {/* Mobile menu header */}
             <div className="flex h-19 items-center justify-between px-5">
-              <Brand dark onClick={() => setOpen(false)} />
+              <Brand
+                dark
+                onClick={() => setOpen(false)}
+              />
 
               <button
                 type="button"
                 onClick={() => setOpen(false)}
                 aria-label="Close menu"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full text-white transition-colors hover:bg-white/10"
               >
                 <X className="h-6 w-6" />
               </button>
@@ -160,7 +195,7 @@ export default function Navbar() {
                     to={l.to}
                     data-testid={`nav-mobile-${l.label.toLowerCase()}`}
                     onClick={() => setOpen(false)}
-                    className="flex items-center justify-between border-b border-white/10 py-5 font-heading text-3xl font-extrabold tracking-tight"
+                    className="flex items-center justify-between border-b border-white/10 py-5 font-heading text-2xl font-extrabold tracking-tight transition-colors hover:text-[#d4e0b3]"
                   >
                     {l.label}
 
