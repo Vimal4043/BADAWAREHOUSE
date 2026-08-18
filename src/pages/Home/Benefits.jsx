@@ -21,12 +21,12 @@ const BENEFITS = [
 
 export default function Benefits() {
   return (
-    <section data-testid="benefits-section" className="scroll-mt-24 bg-[#0a192f] px-5 py-10 text-white md:px-10 md:py-20">
+    <section data-testid="benefits-section" className="scroll-mt-24 bg-[#f6f7f4] px-5 py-10 text-[#0a192f] md:px-10 md:py-20">
       <div className="mx-auto max-w-350">
         <h2 className="max-w-5xl font-heading text-2xl font-extrabold leading-tight tracking-tight md:text-3xl">
           Why Choose BADAWAREHOUSE
         </h2>
-        <p className="mt-4 max-w-5xl text-base leading-relaxed text-white/70 md:text-lg">
+        <p className="mt-4 max-w-5xl text-base leading-relaxed text-[#0a192f]/60 md:text-lg">
           A professional, business-focused service built on diligence and results.
         </p>
 

@@ -24,8 +24,9 @@ export default function Hero() {
     <section
       id="top"
       data-testid="hero-section"
-      className="relative flex min-h-svh items-center justify-center overflow-hidden"
+      className="relative flex min-h-svh w-full items-center justify-center overflow-hidden"
     >
+      {/* Full-width hero image */}
       <motion.img
         src={HERO_IMG}
         alt="Industrial warehouse interior"
@@ -35,10 +36,12 @@ export default function Hero() {
         className="absolute inset-0 h-full w-full object-cover"
       />
 
+      {/* Overlay */}
       <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/45 to-black/25" />
       <div className="grain pointer-events-none absolute inset-0 opacity-[0.04]" />
 
-      <div className="relative z-10 flex flex-col items-center px-5 text-center text-white">
+      {/* Content inside constant container */}
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center px-5 text-center text-white sm:px-6 lg:px-8">
         <motion.h1
           variants={container}
           initial="hidden"
@@ -97,6 +100,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
+      {/* Scroll indicator */}
       <div className="absolute bottom-7 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-white">
         <span className="text-[10px] font-semibold uppercase tracking-[0.25em]">
           Scroll

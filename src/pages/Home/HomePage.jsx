@@ -1,11 +1,15 @@
 import Navbar from '../../components/Navbar.jsx'
 import Hero from './Hero.jsx'
 import FeaturedProperties from './FeaturedProperties.jsx'
+import Form from './Form.jsx'
 import ExploreCities from './ExploreCities.jsx'
 import Services from './Services.jsx'
 import Benefits from './Benefits.jsx'
 import TopProperties from './TopProperties.jsx'
 import Testimonials from './Testimonials.jsx'
+import VisionMissionValues from './VisionMissionValues.jsx'
+import AboutUs from './AboutUs.jsx'
+import ContactInfo from './ContactInfo.jsx'
 
 export default function HomePage() {
   return (
@@ -13,12 +17,16 @@ export default function HomePage() {
       <Navbar />
       <main>
         <Hero />
+        <AboutUs />
         <FeaturedProperties />
-        <ExploreCities />
-        <Services />
-        <Benefits />
-        <TopProperties />
+        <Form />
+        {/* <ExploreCities /> */}
+        {/* <Services /> */}
+        <VisionMissionValues />
+        {/* <Benefits /> */}
+        {/* <TopProperties /> */}
         {/* <Testimonials /> */}
+        <ContactInfo />
       </main>
     </>
   )

@@ -28,16 +28,16 @@ function Brand({ dark, onClick }) {
       {/* Brand text */}
       <span className="flex flex-col leading-none">
         <span
-          className={`font-heading text-lg font-extrabold tracking-tight text-white ${
-            dark ? "lg:text-white" : "lg:text-[#0a192f]"
+          className={`font-heading text-lg font-extrabold tracking-tight ${
+            dark ? "text-white" : "text-[#0a192f]"
           }`}
         >
           {BRAND.name}
         </span>
 
         <span
-          className={`mt-1 text-[9px] font-semibold uppercase tracking-[0.28em] text-white/50 ${
-            dark ? "lg:text-white/50" : "lg:text-[#748c70]"
+          className={`mt-1 text-[9px] font-semibold uppercase tracking-[0.28em] ${
+            dark ? "text-white/50" : "text-[#748c70]"
           }`}
         >
           {BRAND.tagline}
@@ -78,12 +78,13 @@ export default function Navbar() {
   }, [open]);
 
   /*
-   * Desktop navbar behavior:
-   * Home + top     = transparent
-   * Home + scroll  = white
-   * Other pages    = white
+   * Desktop:
+   * Home + top    → transparent
+   * Home + scroll → white
+   * Other pages   → white
    *
-   * Mobile/tablet ignores this and stays navy.
+   * Mobile / tablet:
+   * Always navy
    */
   const dark = pathname === "/" && !scrolled;
 
@@ -92,10 +93,10 @@ export default function Navbar() {
       data-testid="navbar"
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500
 
-        /* MOBILE / TABLET — ALWAYS NAVY */
+        /* Mobile / Tablet */
         bg-[#0a192f] text-white shadow-none
 
-        /* DESKTOP — USE EXISTING SCROLL BEHAVIOR */
+        /* Desktop */
         ${
           dark
             ? "lg:bg-transparent lg:text-white lg:shadow-none"
@@ -103,11 +104,16 @@ export default function Navbar() {
         }
       `}
     >
-      <div className="flex h-19 items-center justify-between px-5 md:px-10">
+      {/* =========================================================
+          NAVBAR CONTENT CONTAINER
+          ========================================================= */}
+      <div className="mx-auto flex h-19 w-full max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
         {/* Brand */}
         <Brand dark={dark} />
 
-        {/* Desktop navigation */}
+        {/* =====================================================
+            DESKTOP NAVIGATION
+            ===================================================== */}
         <nav className="hidden items-center gap-11 lg:flex">
           {LINKS.map((l) => (
             <Link
@@ -121,7 +127,9 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Desktop phone button */}
+        {/* =====================================================
+            DESKTOP PHONE BUTTON
+            ===================================================== */}
         <div className="hidden items-center gap-4 lg:flex">
           <a
             href={`tel:${BRAND.phone.replace(/\s+/g, "")}`}
@@ -137,7 +145,9 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile menu button */}
+        {/* =====================================================
+            MOBILE MENU BUTTON
+            ===================================================== */}
         <button
           type="button"
           data-testid="nav-mobile-toggle"
@@ -150,7 +160,9 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* =======================================================
+          MOBILE MENU
+          ======================================================= */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -162,11 +174,8 @@ export default function Navbar() {
             className="fixed inset-0 z-60 flex flex-col bg-[#0a192f] text-white lg:hidden"
           >
             {/* Mobile menu header */}
-            <div className="flex h-19 items-center justify-between px-5">
-              <Brand
-                dark
-                onClick={() => setOpen(false)}
-              />
+            <div className="mx-auto flex h-19 w-full max-w-7xl items-center justify-between px-5 sm:px-6">
+              <Brand dark onClick={() => setOpen(false)} />
 
               <button
                 type="button"
@@ -179,7 +188,7 @@ export default function Navbar() {
             </div>
 
             {/* Mobile navigation */}
-            <nav className="flex flex-col px-8 pt-6">
+            <nav className="mx-auto flex w-full max-w-7xl flex-col px-5 pt-6 sm:px-6">
               {LINKS.map((l, i) => (
                 <motion.div
                   key={l.label}
@@ -206,7 +215,7 @@ export default function Navbar() {
             </nav>
 
             {/* Mobile phone button */}
-            <div className="mt-auto p-8">
+            <div className="mx-auto mt-auto w-full max-w-7xl p-5 sm:p-6">
               <a
                 href={`tel:${BRAND.phone.replace(/\s+/g, "")}`}
                 onClick={() => setOpen(false)}

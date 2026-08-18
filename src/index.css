@@ -25,16 +25,88 @@ body {
   color: var(--navy);
 }
 
+/* =========================================================
+   GLOBAL TYPOGRAPHY
+   Change these values here to control the entire website.
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+}
+
+h2 {
+  font-size: clamp(1.25rem, 2.5vw, 3rem);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+h3 {
+  font-size: clamp(1rem, 2vw, 2rem);
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+h4 {
+  font-size: clamp(0.875rem, 1.8vw, 1.25rem);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+h5 {
+  font-size: 1.125rem;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+h6 {
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+p {
+  margin: 0;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  line-height: 1.75;
+  font-weight: 400;
+}
+
+/* =========================================================
+   BRAND FONT
+========================================================= */
+
 .font-heading {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
+
+/* =========================================================
+   SELECTION
+========================================================= */
 
 ::selection {
   background: var(--navy);
   color: var(--lime);
 }
 
-/* Custom scrollbar */
+/* =========================================================
+   CUSTOM SCROLLBAR
+========================================================= */
+
 ::-webkit-scrollbar {
   width: 9px;
 }
@@ -48,7 +120,10 @@ body {
   border-radius: 999px;
 }
 
-/* Floating animation */
+/* =========================================================
+   FLOATING ANIMATION
+========================================================= */
+
 @keyframes floaty {
   0%,
   100% {
@@ -64,16 +139,21 @@ body {
   animation: floaty 6s ease-in-out infinite;
 }
 
-/* Grain texture */
+/* =========================================================
+   GRAIN TEXTURE
+========================================================= */
+
 .grain {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
 }
 
-/* Accessibility */
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
     transition: none !important;
   }
 }
-
