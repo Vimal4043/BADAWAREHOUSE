@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { BRAND } from "../data/properties.js";
+import logo from "../assets/badawarehouse-logo.png";
 
 const NAV = [
   { label: "Home", to: "/" },
@@ -21,26 +22,15 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           {/* Brand / About */}
           <div>
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2.5"
-            >
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#d4e0b3] font-heading text-base font-extrabold text-[#0a192f]">
-                B
-              </span>
-
-              <span className="flex flex-col leading-none">
-                <span className="font-heading text-lg font-extrabold tracking-tight">
-                  {BRAND.name}
-                </span>
-
-                <span className="mt-1 text-[9px] font-semibold uppercase tracking-[0.28em] text-white/40">
-                  {BRAND.tagline}
-                </span>
-              </span>
+            <Link to="/" className="inline-flex items-center">
+              <img
+                src={logo}
+                alt="BADAWAREHOUSE"
+                className="h-14 w-auto object-contain md:h-18"
+              />
             </Link>
 
-            <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/60">
+            <p className="max-w-sm text-sm leading-relaxed text-white/60">
               A professional platform for finding commercial and industrial
               properties — warehouses, industrial buildings, commercial spaces
               and industrial land.

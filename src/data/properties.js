@@ -53,9 +53,10 @@ import khopoli11 from "../assets/properties/khopoli/khopoli-11.jpeg";
 export const BRAND = {
   name: "BADAWAREHOUSE",
   tagline: "Commercial & Industrial",
-  phone: "+91 1234567890",
-  email: "badawarehouse@gmail.com",
-  address: "New Delhi, Delhi, India",
+  phone: "08048782038",
+  email: "alokenterprises20@gmail.com",
+  address:
+    "629, 6th Floor, A 4 Building, Silver Spring, Opp Dena Bank, Taloja MIDC, Panvel, Navi Mumbai, Maharashtra - 410208, India",
 };
 
 // Property types offered across the platform (also used by the search filters).

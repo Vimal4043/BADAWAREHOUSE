@@ -5,7 +5,7 @@ const contactItems = [
   {
     icon: MapPin,
     title: "Location",
-    content: BRAND.address,
+    content: "Panvel, Navi Mumbai, Maharashtra",
   },
   {
     icon: Phone,

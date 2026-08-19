@@ -14,13 +14,13 @@ export default function NotFoundPage() {
         }}
         className="mx-auto max-w-2xl text-center"
       >
-        <p className="font-heading text-6xl font-extrabold tracking-tight text-[#748c70] sm:text-7xl">
+        <h2 className="font-heading text-6xl font-extrabold tracking-tight text-[#748c70] sm:text-7xl">
           404
-        </p>
+        </h2>
 
-        <h1 className="mt-5 font-heading text-3xl font-extrabold tracking-tight text-[#0a192f] sm:text-5xl">
+        <h2 className="mt-5 mb-5 font-heading text-3xl font-extrabold tracking-tight text-[#0a192f] sm:text-5xl">
           Page not found
-        </h1>
+        </h2>
 
         <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-[#4b5563] sm:text-lg">
           The page you're looking for doesn't exist or may have been moved.
