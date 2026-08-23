@@ -3,7 +3,7 @@ import { Reveal } from '../../components/Reveal.jsx'
 
 export default function AboutCTA() {
   return (
-    <section data-testid="about-cta" className="scroll-mt-24 bg-white px-5 py-24 md:px-10 md:py-32">
+    <section data-testid="about-cta" className="scroll-mt-12 bg-white px-5 py-10 md:px-10 md:py-12">
       <div className="mx-auto max-w-350">
         <Reveal>
           <div className="rounded-3xl border border-black/[0.07] bg-[#f9fafb] p-10 md:p-16">

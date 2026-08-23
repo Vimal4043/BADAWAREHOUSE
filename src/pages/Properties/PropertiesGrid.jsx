@@ -3,7 +3,7 @@ import { Reveal } from '../../components/Reveal.jsx'
 
 export default function PropertiesGrid({ properties }) {
   return (
-    <section data-testid="properties-grid" className="scroll-mt-24 bg-[#f9fafb] px-5 py-24 md:px-10 md:py-32">
+    <section data-testid="properties-grid" className="scroll-mt-12 bg-[#f9fafb] px-5 py-10 md:px-10 md:py-12">
       <div className="mx-auto max-w-350">
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-4">

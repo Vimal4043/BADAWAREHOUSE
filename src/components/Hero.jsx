@@ -30,7 +30,7 @@ export default function Hero() {
     <section
       id="top"
       data-testid="hero-section"
-      className="relative pt-25 flex min-h-svh items-center justify-center overflow-hidden"
+      className="relative pt-15 flex min-h-svh items-center justify-center overflow-hidden"
     >
       <motion.img
         src={HERO_IMG}

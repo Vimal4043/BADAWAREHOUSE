@@ -5,7 +5,6 @@ import Form from './Form.jsx'
 import ExploreCities from './ExploreCities.jsx'
 import Services from './Services.jsx'
 import Benefits from './Benefits.jsx'
-import TopProperties from './TopProperties.jsx'
 import Testimonials from './Testimonials.jsx'
 import VisionMissionValues from './VisionMissionValues.jsx'
 import AboutUs from './AboutUs.jsx'
@@ -24,7 +23,6 @@ export default function HomePage() {
         {/* <Services /> */}
         <VisionMissionValues />
         {/* <Benefits /> */}
-        {/* <TopProperties /> */}
         {/* <Testimonials /> */}
         <ContactInfo />
       </main>

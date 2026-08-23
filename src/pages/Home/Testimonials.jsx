@@ -29,7 +29,7 @@ export default function Testimonials() {
   const go = (d) => setI((p) => (p + d + REVIEWS.length) % REVIEWS.length)
 
   return (
-    <section data-testid="testimonials-section" className="relative overflow-hidden bg-[#0a192f] px-5 py-24 text-white md:px-10 md:py-32">
+    <section data-testid="testimonials-section" className="relative overflow-hidden bg-[#0a192f] px-5 py-10 text-white md:px-10 md:py-12">
       <div className="grain pointer-events-none absolute inset-0 opacity-[0.05]" />
 
       <div className="relative mx-auto grid max-w-350 gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-20">

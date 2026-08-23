@@ -4,7 +4,7 @@ import { HUBS } from '../../data/properties.js'
 
 export default function ExploreCities() {
   return (
-    <section data-testid="explore-cities-section" className="scroll-mt-24 bg-[#f9fafb] px-5 py-10 md:px-10 md:py-20">
+    <section data-testid="explore-cities-section" className="scroll-mt-24 bg-[#f9fafb] px-5 py-10 md:px-10 md:py-12">
       <div className="mx-auto max-w-350">
         <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#748c70]">
           Business Locations

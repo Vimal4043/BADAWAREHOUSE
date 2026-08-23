@@ -10,7 +10,7 @@ export default function FeaturedProperties() {
     <section
       id="featured"
       data-testid="featured-section"
-      className="scroll-mt-24 bg-white py-8 md:py-12"
+      className="scroll-mt-12 bg-white py-10 md:py-12"
     >
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
         {/* Section heading */}

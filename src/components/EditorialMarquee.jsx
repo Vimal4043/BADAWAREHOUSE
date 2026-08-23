@@ -11,7 +11,7 @@ const WORDS = [
 
 export default function EditorialMarquee() {
   return (
-    <section className="border-y border-white/10 bg-[#0a192f] py-10">
+    <section className="border-y border-white/10 bg-[#0a192f] py-10 md:py-12">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-10 gap-y-4 px-6">
         {WORDS.map((word) => (
           <div key={word} className="flex items-center gap-8">

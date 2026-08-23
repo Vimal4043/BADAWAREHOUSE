@@ -42,7 +42,7 @@ export default function Form() {
     <section
       id="inquiry"
       data-testid="inquiry-section"
-      className="bg-[#f5f6f3] py-10 md:py-16"
+      className="bg-[#f5f6f3] py-10 md:py-12"
     >
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="overflow-hidden rounded-3xl">

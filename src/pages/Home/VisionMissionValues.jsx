@@ -40,7 +40,7 @@ export default function VisionMissionValues() {
     <section
       id="vision-mission-values"
       data-testid="vision-mission-values-section"
-      className="bg-white py-12 md:py-16"
+      className="bg-white py-10 md:py-12"
     >
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
         

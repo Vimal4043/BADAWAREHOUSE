@@ -15,7 +15,7 @@ export default function Footer() {
   return (
     <footer
       data-testid="footer"
-      className="bg-[#0a192f] pb-4 pt-16 text-white md:pt-20"
+      className="bg-[#0a192f] border-t border-white/20 py-10 text-white md:py-12"
     >
       {/* Main container */}
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">

@@ -11,7 +11,7 @@ export default function SimilarProperties({ currentId }) {
   const similar = current ? [...sameType, ...diffType].slice(0, 3) : others.slice(0, 3)
 
   return (
-    <section data-testid="similar-properties" className="scroll-mt-24 bg-[#f9fafb] px-5 py-16 md:px-10 md:py-24">
+    <section data-testid="similar-properties" className="scroll-mt-12 bg-[#f9fafb] px-5 py-10 md:px-10 md:py-12">
       <div className="mx-auto max-w-5xl">
         <Reveal>
           <h2 className="font-heading text-2xl font-extrabold leading-tight tracking-tight text-[#0a192f] md:text-4xl">

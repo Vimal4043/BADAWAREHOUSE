@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 export default function NotFoundPage() {
   return (
-    <section className="flex min-h-[70vh] items-center justify-center bg-white px-6 py-24">
+    <section className="flex min-h-[70vh] items-center justify-center bg-white px-6 py-12 md:px-10 md:py-16">
       <motion.div
         initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
@@ -36,13 +36,13 @@ export default function NotFoundPage() {
             Back Home
           </Link>
 
-          {/* <Link
+          <Link
             to="/properties"
             className="group flex items-center justify-center gap-2 rounded-full border border-[#0a192f]/20 px-7 py-3.5 font-semibold text-[#0a192f] transition-colors duration-300 hover:border-[#748c70] hover:bg-[#748c70] hover:text-white"
           >
             View Properties
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link> */}
+          </Link>
         </div>
       </motion.div>
     </section>

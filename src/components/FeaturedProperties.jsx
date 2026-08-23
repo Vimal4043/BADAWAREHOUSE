@@ -10,7 +10,7 @@ export default function FeaturedProperties() {
     <section
       id="featured"
       data-testid="featured-section"
-      className="scroll-mt-24 bg-white px-5 py-24 md:px-10 md:py-32"
+      className="scroll-mt-12 bg-white px-5 py-10 md:px-10 md:py-12"
     >
       <div className="mx-auto max-w-350">
         <Reveal>

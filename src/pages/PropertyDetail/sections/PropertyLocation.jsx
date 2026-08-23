@@ -4,7 +4,7 @@ import { MapPin, ArrowUpRight } from 'lucide-react'
 export default function PropertyLocation({ property }) {
   const hasConnectivity = property.connectivity && property.connectivity.length > 0
   return (
-    <section data-testid="property-location" className="scroll-mt-24 bg-[#f9fafb] px-5 py-16 md:px-10 md:py-24">
+    <section data-testid="property-location" className="scroll-mt-12 bg-[#f9fafb] px-5 py-10 md:px-10 md:py-12">
       <div className="mx-auto max-w-5xl">
         <Reveal>
           <Overline>Location &amp; Connectivity</Overline>

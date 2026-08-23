@@ -60,7 +60,7 @@ export default function FAQLeasing() {
   const [openIndex, setOpenIndex] = useState(null)
 
   return (
-    <section data-testid="faq-leasing" className="scroll-mt-24 bg-[#f9fafb] px-5 py-24 md:px-10 md:py-32">
+    <section data-testid="faq-leasing" className="scroll-mt-12 bg-[#f9fafb] px-5 py-10 md:px-10 md:py-12">
       <div className="mx-auto max-w-3xl">
         <Reveal>
           <Overline>Leasing</Overline>

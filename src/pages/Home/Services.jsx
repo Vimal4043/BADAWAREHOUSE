@@ -21,7 +21,7 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section id="services" data-testid="services-section" className="scroll-mt-24 bg-white px-5 py-10 md:px-10 md:py-20">
+    <section id="services" data-testid="services-section" className="scroll-mt-12 bg-white px-5 py-10 md:px-10 md:py-12">
       <div className="mx-auto max-w-350">
         <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#748c70]">
           Commercial Property Solutions

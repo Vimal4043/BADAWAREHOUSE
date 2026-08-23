@@ -23,7 +23,7 @@ export default function PropertyEnquiry({ property }) {
   }
 
   return (
-    <section data-testid="property-enquiry" className="scroll-mt-24 bg-white px-5 py-16 md:px-10 md:py-24">
+    <section data-testid="property-enquiry" className="scroll-mt-12 bg-white px-5 py-10 md:px-10 md:py-12">
       <div className="mx-auto max-w-3xl">
         <Reveal>
           <div className="rounded-3xl border border-black/[0.07] bg-[#f9fafb] p-8 md:p-12">

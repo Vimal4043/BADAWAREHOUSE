@@ -23,11 +23,11 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            {/* <Route path="/properties" element={<PropertiesPage />} />
+            <Route path="/properties" element={<PropertiesPage />} />
             <Route path="/properties/:id" element={<PropertyDetailPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/faqs" element={<FAQsPage />} />
-            <Route path="/contact" element={<ContactPage />} /> */}
+            <Route path="/contact" element={<ContactPage />} />
 
             <Route path="*" element={<NotFoundPage />} />
           </Routes>

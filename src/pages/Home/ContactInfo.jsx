@@ -28,7 +28,7 @@ export default function ContactInfo() {
       data-testid="contact-info-section"
       className="bg-[#f5f6f3] text-[#0a192f]"
     >
-      <div className="mx-auto w-full max-w-7xl px-5 py-16 sm:px-6 md:py-20 lg:px-8">
+      <div className="mx-auto w-full max-w-7xl px-5 py-10 sm:px-6 md:py-12 lg:px-8">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-8">
           {contactItems.map((item) => {
             const Icon = item.icon;

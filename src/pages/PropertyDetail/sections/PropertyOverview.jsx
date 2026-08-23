@@ -3,7 +3,7 @@ import { MapPin } from 'lucide-react'
 
 export default function PropertyOverview({ property }) {
   return (
-    <section data-testid="property-overview" className="scroll-mt-24 bg-white px-5 py-16 md:px-10 md:py-24">
+    <section data-testid="property-overview" className="scroll-mt-12 bg-white px-5 py-10 md:px-10 md:py-12">
       <div className="mx-auto max-w-5xl">
         <Reveal>
           <Overline>Property Overview</Overline>

@@ -3,7 +3,7 @@ import { Reveal } from '../../components/Reveal.jsx'
 
 export default function FAQCTA() {
   return (
-    <section data-testid="faq-cta" className="scroll-mt-24 bg-[#0a192f] px-5 py-24 text-white md:px-10 md:py-32">
+    <section data-testid="faq-cta" className="scroll-mt-12 bg-[#0a192f] px-5 py-10 text-white md:px-10 md:py-12">
       <div className="mx-auto max-w-3xl text-center">
         <Reveal>
           <h2 className="font-heading text-3xl font-extrabold leading-tight tracking-tight md:text-5xl">

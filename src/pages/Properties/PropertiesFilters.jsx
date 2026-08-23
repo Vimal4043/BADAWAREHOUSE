@@ -11,7 +11,7 @@ export default function PropertiesFilters({ filters, onChange }) {
     onChange({ type: 'all', location: 'all', listingType: 'all', query: '' })
 
   return (
-    <section data-testid="properties-filters" className="scroll-mt-24 bg-[#f9fafb] px-5 py-16 md:px-10 md:py-20">
+    <section data-testid="properties-filters" className="scroll-mt-12 bg-[#f9fafb] px-5 py-10 md:px-10 md:py-12">
       <div className="mx-auto max-w-6xl">
         <div className="rounded-2xl border border-black/6 bg-white p-6 md:p-8">
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -90,7 +90,7 @@ export default function PropertiesFilters({ filters, onChange }) {
             </div>
           </div>
 
-          <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
+          <div className="mt-6 flex flex-wrap items-center justify-end gap-4">
             <button
               type="button"
               onClick={reset}

@@ -10,7 +10,7 @@ export default function AboutUs() {
     <section
       id="about"
       data-testid="about-section"
-      className="bg-[#f5f6f3] py-16 md:py-24"
+      className="bg-[#f5f6f3] py-10 md:py-12"
     >
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">

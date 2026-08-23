@@ -7,7 +7,7 @@ export default function Locations() {
   return (
     <section
       data-testid="locations-section"
-      className="bg-[#f9fafb] px-5 py-24 md:px-10 md:py-32"
+      className="bg-[#f9fafb] px-5 py-10 md:px-10 md:py-12"
     >
       <div className="mx-auto max-w-350">
         <Reveal>

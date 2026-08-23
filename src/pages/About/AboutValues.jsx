@@ -22,7 +22,7 @@ const VALUES = [
 
 export default function AboutValues() {
   return (
-    <section data-testid="about-values" className="scroll-mt-24 bg-[#0a192f] px-5 py-24 text-white md:px-10 md:py-32">
+    <section data-testid="about-values" className="scroll-mt-12 bg-[#0a192f] px-5 py-10 text-white md:px-10 md:py-12">
       <div className="mx-auto max-w-350">
         <Reveal>
           <Overline light>Our Values</Overline>

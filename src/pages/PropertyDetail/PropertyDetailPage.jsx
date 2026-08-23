@@ -20,7 +20,7 @@ export default function PropertyDetailPage() {
   if (!property) {
     return (
       <>
-        <div className="min-h-screen bg-white px-5 py-24 text-center md:px-10 md:py-32">
+        <div className="min-h-screen bg-white px-5 py-10 text-center md:px-10 md:py-12">
           <h1 className="font-heading text-3xl font-extrabold text-[#0a192f] md:text-5xl">Property not found</h1>
           <p className="mt-4 text-base text-[#4b5563] md:text-lg">
             The property you are looking for does not exist or has been removed.

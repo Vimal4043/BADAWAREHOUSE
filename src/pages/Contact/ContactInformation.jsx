@@ -28,7 +28,7 @@ const INFO = [
 
 export default function ContactInformation() {
   return (
-    <section data-testid="contact-info" className="scroll-mt-24 bg-[#f9fafb] px-5 py-24 md:px-10 md:py-32">
+    <section data-testid="contact-info" className="scroll-mt-12 bg-[#f9fafb] px-5 py-10 md:px-10 md:py-12">
       <div className="mx-auto max-w-5xl">
         <Reveal>
           <Overline>Contact Information</Overline>

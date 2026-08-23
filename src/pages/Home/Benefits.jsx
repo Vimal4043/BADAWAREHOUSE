@@ -21,7 +21,7 @@ const BENEFITS = [
 
 export default function Benefits() {
   return (
-    <section data-testid="benefits-section" className="scroll-mt-24 bg-[#f6f7f4] px-5 py-10 text-[#0a192f] md:px-10 md:py-20">
+    <section data-testid="benefits-section" className="scroll-mt-12 bg-[#f6f7f4] px-5 py-10 text-[#0a192f] md:px-10 md:py-12">
       <div className="mx-auto max-w-350">
         <h2 className="max-w-5xl font-heading text-2xl font-extrabold leading-tight tracking-tight md:text-3xl">
           Why Choose BADAWAREHOUSE

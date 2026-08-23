@@ -35,7 +35,7 @@ export default function Testimonials() {
   return (
     <section
       data-testid="testimonials-section"
-      className="relative overflow-hidden bg-[#0a192f] px-5 py-24 text-white md:px-10 md:py-32"
+      className="relative overflow-hidden bg-[#0a192f] px-5 py-10 text-white md:px-10 md:py-12"
     >
       <div className="grain pointer-events-none absolute inset-0 opacity-[0.05]" />
 

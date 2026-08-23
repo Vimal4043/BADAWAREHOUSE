@@ -30,7 +30,7 @@ export default function Manifesto() {
     <section
       id="about"
       data-testid="about-section"
-      className="scroll-mt-24 bg-[#f9fafb] px-5 py-24 md:px-10 md:py-32"
+      className="scroll-mt-12 bg-[#f9fafb] px-5 py-10 md:px-10 md:py-12"
     >
       <div className="mx-auto grid max-w-350 gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
         <div className="lg:sticky lg:top-28 lg:self-start">
