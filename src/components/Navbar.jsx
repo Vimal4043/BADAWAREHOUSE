@@ -19,12 +19,12 @@ function Brand({ onClick }) {
       to="/"
       data-testid="nav-home"
       onClick={onClick}
-      className="flex items-center"
+      className="flex min-w-0 shrink-0 items-center"
     >
       <img
         src={logo}
         alt="BADAWAREHOUSE"
-        className="h-14 w-auto object-contain md:h-18"
+        className="h-11 w-auto object-contain sm:h-12 xl:h-14"
       />
     </Link>
   );
@@ -41,65 +41,83 @@ export default function Navbar() {
     };
   }, [open]);
 
+  const phoneHref = `tel:${BRAND.phone.replace(/\s+/g, "")}`;
+
   return (
     <header
       data-testid="navbar"
       className="fixed inset-x-0 top-0 z-50 bg-white text-[#0a192f] shadow-[0_1px_0_rgb(10,25,47,0.08)]"
     >
       {/* =========================================================
-          NAVBAR CONTENT
-          ========================================================= */}
-      <div className="mx-auto flex h-19 w-full max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
+          MAIN NAVBAR
+      ========================================================= */}
+      <div className="mx-auto flex h-[76px] w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Brand */}
         <Brand />
 
-        {/* =====================================================
+        {/* =======================================================
             DESKTOP NAVIGATION
-            ===================================================== */}
-        <nav className="hidden items-center gap-11 lg:flex">
-          {LINKS.map((l) => (
+            xl = 1280px and above
+        ======================================================= */}
+        <nav className="hidden items-center gap-7 xl:flex 2xl:gap-9">
+          {LINKS.map((link) => (
             <Link
-              key={l.label}
-              to={l.to}
-              data-testid={`nav-${l.label.toLowerCase()}`}
-              className="text-md font-medium text-[#0a192f] transition-colors duration-300 hover:text-[#748c70]"
+              key={link.label}
+              to={link.to}
+              data-testid={`nav-${link.label.toLowerCase()}`}
+              className="whitespace-nowrap text-sm font-medium text-[#0a192f] transition-colors duration-300 hover:text-[#748c70] 2xl:text-base"
             >
-              {l.label}
+              {link.label}
             </Link>
           ))}
         </nav>
 
-        {/* =====================================================
-            DESKTOP PHONE BUTTON
-            ===================================================== */}
-        <div className="hidden items-center gap-4 lg:flex">
+        {/* =======================================================
+            DESKTOP PHONE
+        ======================================================= */}
+        <div className="hidden xl:flex">
           <a
-            href={`tel:${BRAND.phone.replace(/\s+/g, "")}`}
-            className="group inline-flex items-center gap-2 rounded-full border border-[#0a192f]/15 px-5 py-2.5 text-sm font-semibold text-[#0a192f] transition-all duration-300 hover:border-[#748c70] hover:bg-[#748c70] hover:text-white"
+            href={phoneHref}
+            className="group inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-[#0a192f]/15 px-4 py-2.5 text-sm font-semibold text-[#0a192f] transition-all duration-300 hover:border-[#748c70] hover:bg-[#748c70] hover:text-white 2xl:px-5"
           >
             <Phone className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-            Enquire
+
+            <span>{BRAND.phone}</span>
           </a>
         </div>
 
-        {/* =====================================================
-            MOBILE MENU BUTTON
-            ===================================================== */}
-        <button
-          type="button"
-          data-testid="nav-mobile-toggle"
-          onClick={() => setOpen(true)}
-          aria-label="Open menu"
-          aria-expanded={open}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full text-[#0a192f] transition-colors hover:bg-[#f5f6f3] lg:hidden"
-        >
-          <Menu className="h-6 w-6" />
-        </button>
+        {/* =======================================================
+            TABLET / MOBILE CONTROLS
+            Visible below xl
+        ======================================================= */}
+        <div className="flex items-center gap-2 xl:hidden">
+          {/* Phone */}
+          <a
+            href={phoneHref}
+            onClick={() => setOpen(false)}
+            aria-label={`Call ${BRAND.phone}`}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#748c70] text-white transition-colors duration-300 hover:bg-[#5f7a5c] sm:h-11 sm:w-11"
+          >
+            <Phone className="h-4 w-4 sm:h-[18px] sm:w-[18px]" />
+          </a>
+
+          {/* Menu */}
+          <button
+            type="button"
+            data-testid="nav-mobile-toggle"
+            onClick={() => setOpen(true)}
+            aria-label="Open menu"
+            aria-expanded={open}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full text-[#0a192f] transition-colors hover:bg-[#f5f6f3] sm:h-11 sm:w-11"
+          >
+            <Menu className="h-6 w-6" />
+          </button>
+        </div>
       </div>
 
-      {/* =======================================================
-          MOBILE MENU
-          ======================================================= */}
+      {/* =========================================================
+          MOBILE / TABLET MENU
+      ========================================================= */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -107,70 +125,72 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-60 flex flex-col bg-white text-[#0a192f] lg:hidden"
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-[60] flex min-h-screen flex-col overflow-y-auto bg-white text-[#0a192f] xl:hidden"
           >
-            {/* Mobile menu header */}
-            <div className="mx-auto flex h-19 w-full max-w-7xl items-center justify-between px-5 sm:px-6">
-              <Link
-                to="/"
-                onClick={() => setOpen(false)}
-                className="flex items-center"
-              >
-                <img
-                  src={logo}
-                  alt="BADAWAREHOUSE"
-                  className="h-14 w-auto object-contain"
-                />
-              </Link>
+            {/* -----------------------------------------------------
+                MENU HEADER
+            ----------------------------------------------------- */}
+            <div className="mx-auto flex h-[76px] w-full max-w-7xl shrink-0 items-center justify-between px-4 sm:px-6 lg:px-8">
+              <Brand onClick={() => setOpen(false)} />
 
               <button
                 type="button"
                 onClick={() => setOpen(false)}
                 aria-label="Close menu"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full text-[#0a192f] transition-colors hover:bg-[#f5f6f3]"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full text-[#0a192f] transition-colors hover:bg-[#f5f6f3] sm:h-11 sm:w-11"
               >
                 <X className="h-6 w-6" />
               </button>
             </div>
 
-            {/* Mobile navigation */}
-            <nav className="mx-auto flex w-full max-w-7xl flex-col px-5 pt-6 sm:px-6">
-              {LINKS.map((l, i) => (
+            {/* -----------------------------------------------------
+                MOBILE NAVIGATION
+            ----------------------------------------------------- */}
+            <nav className="mx-auto flex w-full max-w-7xl flex-col px-4 pt-4 sm:px-6 sm:pt-6 lg:px-8">
+              {LINKS.map((link, index) => (
                 <motion.div
-                  key={l.label}
-                  initial={{ opacity: 0, y: 16 }}
+                  key={link.label}
+                  initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
-                    delay: 0.08 + i * 0.07,
-                    duration: 0.5,
+                    delay: 0.05 + index * 0.06,
+                    duration: 0.4,
                     ease: [0.22, 1, 0.36, 1],
                   }}
                 >
                   <Link
-                    to={l.to}
-                    data-testid={`nav-mobile-${l.label.toLowerCase()}`}
+                    to={link.to}
+                    data-testid={`nav-mobile-${link.label.toLowerCase()}`}
                     onClick={() => setOpen(false)}
-                    className="flex items-center justify-between border-b border-[#0a192f]/10 py-5 font-heading text-2xl font-extrabold tracking-tight text-[#0a192f] transition-colors hover:text-[#748c70]"
+                    className="flex items-center justify-between border-b border-[#0a192f]/10 py-5 font-heading text-xl font-extrabold tracking-tight text-[#0a192f] transition-colors hover:text-[#748c70] sm:py-6 sm:text-2xl"
                   >
-                    {l.label}
+                    <span>{link.label}</span>
 
-                    <ArrowUpRight className="h-6 w-6 text-[#748c70]" />
+                    <ArrowUpRight className="h-5 w-5 shrink-0 text-[#748c70] sm:h-6 sm:w-6" />
                   </Link>
                 </motion.div>
               ))}
             </nav>
 
-            {/* Mobile phone button */}
-            <div className="mx-auto mt-auto w-full max-w-7xl p-5 sm:p-6">
-              <a
-                href={`tel:${BRAND.phone.replace(/\s+/g, "")}`}
-                onClick={() => setOpen(false)}
-                className="inline-flex items-center gap-2 rounded-full bg-[#748c70] px-7 py-3.5 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#5f7a5c]"
-              >
-                <Phone className="h-4 w-4" />
-                Enquire
-              </a>
+            {/* -----------------------------------------------------
+                MOBILE CONTACT AREA
+            ----------------------------------------------------- */}
+            <div className="mx-auto mt-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+              <div className="border-t border-[#0a192f]/10 pt-5 sm:pt-6">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#748c70]">
+                  Call us
+                </p>
+
+                <a
+                  href={phoneHref}
+                  onClick={() => setOpen(false)}
+                  className="inline-flex items-center gap-2 rounded-full bg-[#748c70] px-6 py-3.5 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#5f7a5c]"
+                >
+                  <Phone className="h-4 w-4" />
+                  {BRAND.phone}
+                </a>
+              </div>
             </div>
           </motion.div>
         )}

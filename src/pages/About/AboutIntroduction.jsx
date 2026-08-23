@@ -1,7 +1,26 @@
 import { BRAND } from "../../data/properties.js";
-import { Reveal, Overline } from "../../components/Reveal.jsx";
+import { Reveal } from "../../components/Reveal.jsx";
 
 import aboutImage from "../../assets/about.jpg";
+
+const COMPANY_DETAILS = [
+  {
+    label: "Business Name",
+    value: BRAND.name,
+  },
+  {
+    label: "Business Type",
+    value: "Commercial & Industrial Real Estate",
+  },
+  {
+    label: "Operating Locations",
+    value: "Taloja, Bhiwandi, Khopoli, Raigad",
+  },
+  {
+    label: "Primary Services",
+    value: "Property Leasing, Property Sales & Sourcing",
+  },
+];
 
 export default function AboutIntroduction() {
   return (
@@ -17,7 +36,9 @@ export default function AboutIntroduction() {
           </h2>
         </Reveal>
 
-        {/* Main Content */}
+        {/* ================================================================
+            ABOUT CONTENT
+        ================================================================= */}
         <div className="mt-5 grid items-start gap-8 lg:grid-cols-[1fr_0.95fr] lg:gap-10">
           {/* Left - Content */}
           <Reveal>
@@ -68,6 +89,32 @@ export default function AboutIntroduction() {
             </div>
           </Reveal>
         </div>
+
+        {/* ================================================================
+            COMPANY DETAILS TABLE
+        ================================================================= */}
+        <Reveal delay={0.15}>
+          <div className="mt-12 overflow-hidden rounded-xl border border-black/10">
+            <div className="divide-y divide-black/10">
+              {COMPANY_DETAILS.map((item) => (
+                <div
+                  key={item.label}
+                  className="grid grid-cols-1 sm:grid-cols-[280px_1fr]"
+                >
+                  {/* Label */}
+                  <div className="bg-[#f5f5f5] px-4 py-3.5 text-sm font-semibold text-[#0a192f] md:px-5">
+                    {item.label}
+                  </div>
+
+                  {/* Value */}
+                  <div className="px-4 py-3.5 text-sm text-[#24344d] md:px-5">
+                    {item.value}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,8 +1,12 @@
-import { Reveal, Overline } from '../../components/Reveal.jsx'
+import { Reveal, Overline } from "../../components/Reveal.jsx";
+import { BRAND } from "../../data/properties.js";
 
 export default function ContactMap() {
   return (
-    <section data-testid="contact-map" className="scroll-mt-12 bg-white px-5 py-10 md:px-10 md:py-12">
+    <section
+      data-testid="contact-map"
+      className="scroll-mt-12 bg-white px-5 py-10 md:px-10 md:py-12"
+    >
       <div className="mx-auto max-w-5xl">
         <Reveal>
           <Overline>Our Location</Overline>
@@ -21,10 +25,16 @@ export default function ContactMap() {
             />
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="rounded-2xl border border-black/10 bg-white/90 px-8 py-6 text-center backdrop-blur">
-                <p className="font-heading text-xl font-bold text-[#0a192f]">Patna, Bihar, India</p>
-                <p className="mt-2 text-sm text-[#4b5563]">Detailed site visit address shared on scheduling</p>
+                <p className="font-heading text-xl font-bold text-[#0a192f]">
+                  Patna, Bihar, India
+                </p>
+                <p className="mt-2 text-sm text-[#4b5563]">
+                  Detailed site visit address shared on scheduling
+                </p>
                 <a
-                  href="https://maps.google.com"
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                        BRAND.address,
+                      )}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#748c70] px-6 py-2.5 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#5f7a5c]"
@@ -37,5 +47,5 @@ export default function ContactMap() {
         </div>
       </div>
     </section>
-  )
+  );
 }

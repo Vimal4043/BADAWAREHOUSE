@@ -5,22 +5,28 @@ const INFO = [
   {
     icon: MapPin,
     label: "Address",
-    value: "Patna, Bihar, India",
-    href: "https://www.google.com/maps/search/?api=1&query=Patna%2C+Bihar%2C+India",
+    value: "Panvel, Navi Mumbai, Maharashtra, India - 410208",
+    href: "https://www.google.com/maps/search/?api=1&query=Panvel%2C+Navi%Mumbai%2C+Maharashtra%2C+India",
     target: "_blank",
     rel: "noopener noreferrer",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+91 1234567890",
-    href: "tel:+911234567890",
+    value: "+91 08048782038",
+    href: "tel:+9108048782038",
   },
   {
     icon: Mail,
     label: "Email",
-    value: "realestategurukripa@gmail.com",
-    href: "mailto:realestategurukripa@gmail.com",
+    value: "alokenterprises20@gmail.com",
+    href: "mailto:alokenterprises20@gmail.com",
+  },
+  {
+    icon: Mail,
+    label: "Alternative Email",
+    value: "nit9442@gmail.com",
+    href: "mailto:nit9442@gmail.com",
   },
 ];
 
@@ -63,7 +69,7 @@ export default function ContactInformation() {
                   </div>
 
                   {/* Value */}
-                  <h5 className="mt-5 break-words text-base font-semibold leading-6 text-[#0a192f] md:text-lg">
+                  <h5 className="mt-5 wrap-break-word text-base font-semibold leading-6 text-[#0a192f] md:text-lg">
                     {item.value}
                   </h5>
 
