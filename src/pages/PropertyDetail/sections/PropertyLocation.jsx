@@ -8,12 +8,12 @@ export default function PropertyLocation({ property }) {
       <div className="mx-auto max-w-5xl">
         <Reveal>
           <Overline>Location &amp; Connectivity</Overline>
-          <h2 className="mt-6 font-heading text-2xl font-extrabold leading-tight tracking-tight text-[#0a192f] md:text-4xl">
+          <h3 className="mt-6 font-heading text-2xl font-extrabold leading-tight tracking-tight text-[#0a192f] md:text-4xl">
             <span className="inline-flex items-center gap-2">
               <MapPin className="h-6 w-6 text-[#748c70]" />
               {property.location}
             </span>
-          </h2>
+          </h3>
           <p className="mt-3 text-base text-[#4b5563] md:text-lg">
             {property.city}
             {property.state ? `, ${property.state}` : ''}
@@ -50,7 +50,7 @@ export default function PropertyLocation({ property }) {
                     {property.state ? `, ${property.state}` : ''}
                   </p>
                   <a
-                    href="https://maps.google.com"
+                    href={property.locationLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#748c70] px-6 py-2.5 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#5f7a5c]"

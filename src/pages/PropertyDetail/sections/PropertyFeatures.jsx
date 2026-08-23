@@ -7,9 +7,9 @@ export default function PropertyFeatures({ property }) {
     <section data-testid="property-features" className="scroll-mt-12 bg-[#f9fafb] px-5 py-10 md:px-10 md:py-12">
       <div className="mx-auto max-w-5xl">
         <Reveal>
-          <h2 className="font-heading text-2xl font-extrabold leading-tight tracking-tight text-[#0a192f] md:text-4xl">
+          <h3 className="font-heading text-2xl font-extrabold leading-tight tracking-tight text-[#0a192f] md:text-4xl">
             Features
-          </h2>
+          </h3>
         </Reveal>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

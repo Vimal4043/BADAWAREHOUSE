@@ -21,7 +21,7 @@ export default function ContactHero() {
   return (
     <section
       data-testid="contact-hero"
-      className="relative flex min-h-[50vh] items-center justify-center overflow-hidden md:min-h-[60vh]"
+      className="mt-15 relative flex min-h-[50vh] items-center justify-center overflow-hidden md:min-h-[60vh]"
     >
       <motion.img
         src={HERO_IMG}

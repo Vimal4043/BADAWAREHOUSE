@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { toast } from 'sonner'
 import { Reveal } from '../../../components/Reveal.jsx'
+import { sendForm } from '../../../lib/formsubmit.js'
 
 const inputCls =
   'w-full rounded-xl border border-black/10 bg-white px-4 py-3.5 text-[#0a192f] outline-none transition-colors duration-300 placeholder:text-[#0a192f]/35 focus:border-[#748c70] focus:ring-2 focus:ring-[#748c70]/20'
@@ -14,12 +15,32 @@ export default function PropertyEnquiry({ property }) {
     requirement: '',
   })
 
+  const [sending, setSending] = useState(false)
+
   const set = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }))
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault()
-    toast.success('Thank you. Our team will contact you shortly about this property.')
-    setForm({ name: '', company: '', email: '', phone: '', requirement: '' })
+    setSending(true)
+    try {
+      await sendForm(
+        {
+          name: form.name,
+          company: form.company,
+          email: form.email,
+          phone: form.phone,
+          requirement: form.requirement,
+          property: property.title,
+        },
+        'Property enquiry — BADAWAREHOUSE'
+      )
+      toast.success('Thank you. Our team will contact you shortly about this property.')
+      setForm({ name: '', company: '', email: '', phone: '', requirement: '' })
+    } catch {
+      toast.error('Something went wrong. Please try again.')
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -28,9 +49,9 @@ export default function PropertyEnquiry({ property }) {
         <Reveal>
           <div className="rounded-3xl border border-black/[0.07] bg-[#f9fafb] p-8 md:p-12">
             <div className="text-center">
-              <h2 className="font-heading text-3xl font-extrabold leading-tight tracking-tight text-[#0a192f] md:text-5xl">
+              <h3 className="font-heading text-3xl font-extrabold leading-tight tracking-tight text-[#0a192f] md:text-5xl">
                 Enquire About This Property
-              </h2>
+              </h3>
               <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#4b5563] md:text-lg">
                 Interested in {property.title}? Submit an enquiry and our advisors will share full
                 details and arrange a site visit.
@@ -98,9 +119,10 @@ export default function PropertyEnquiry({ property }) {
 
               <button
                 type="submit"
-                className="group mt-7 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#0a192f] px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#748c70] hover:-translate-y-0.5 sm:w-auto"
+                disabled={sending}
+                className="group mt-7 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#0a192f] px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#748c70] hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
               >
-                Send Enquiry
+                {sending ? 'Sending…' : 'Send Enquiry'}
               </button>
             </form>
           </div>

@@ -3,6 +3,7 @@ import { toast } from 'sonner'
 import { Send } from 'lucide-react'
 import { Reveal, Overline } from '../../components/Reveal.jsx'
 import { PROPERTY_TYPES } from '../../data/properties.js'
+import { sendForm } from '../../lib/formsubmit.js'
 
 const inputCls =
   'w-full rounded-xl border border-black/10 bg-white px-4 py-3.5 text-[#0a192f] outline-none transition-colors duration-300 placeholder:text-[#0a192f]/35 focus:border-[#748c70] focus:ring-2 focus:ring-[#748c70]/20'
@@ -18,20 +19,41 @@ export default function ContactForm() {
     message: '',
   })
 
+  const [sending, setSending] = useState(false)
+
   const set = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }))
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault()
-    toast.success("Thanks — we'll be in touch within one business day.")
-    setForm({
-      name: '',
-      company: '',
-      email: '',
-      phone: '',
-      interest: 'Any commercial property',
-      requirement: '',
-      message: '',
-    })
+    setSending(true)
+    try {
+      await sendForm(
+        {
+          name: form.name,
+          company: form.company,
+          email: form.email,
+          phone: form.phone,
+          interest: form.interest,
+          requirement: form.requirement,
+          message: form.message,
+        },
+        "New contact enquiry — BADAWAREHOUSE"
+      )
+      toast.success("Thanks — we'll be in touch within one business day.")
+      setForm({
+        name: '',
+        company: '',
+        email: '',
+        phone: '',
+        interest: 'Any commercial property',
+        requirement: '',
+        message: '',
+      })
+    } catch {
+      toast.error('Something went wrong. Please try again.')
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -48,7 +70,7 @@ export default function ContactForm() {
           </p>
         </Reveal>
 
-        <form onSubmit={submit} data-testid="contact-form" className="mt-16">
+        <form onSubmit={submit} data-testid="contact-form" className="mt-8">
           <div className="grid gap-5 sm:grid-cols-2">
             <label className="block">
               <span className="mb-2 block text-sm font-medium text-[#0a192f]">Name</span>
@@ -143,10 +165,13 @@ export default function ContactForm() {
           <button
             type="submit"
             data-testid="contact-submit"
-            className="group mt-7 inline-flex items-center justify-center gap-2 rounded-xl bg-[#0a192f] px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#748c70] hover:-translate-y-0.5"
+            disabled={sending}
+            className="group mt-7 inline-flex items-center justify-center gap-2 rounded-xl bg-[#0a192f] px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#748c70] hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60"
           >
-            Send Enquiry
-            <Send className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+            {sending ? 'Sending…' : 'Send Enquiry'}
+            {!sending && (
+              <Send className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+            )}
           </button>
         </form>
       </div>

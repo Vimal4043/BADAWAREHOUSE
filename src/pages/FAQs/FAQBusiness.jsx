@@ -85,7 +85,7 @@ export default function FAQBusiness() {
           </h2>
         </Reveal>
 
-        <div className="mt-16">
+        <div className="mt-8">
           {QUESTIONS.map((item, i) => (
             <AccordionItem
               key={i}

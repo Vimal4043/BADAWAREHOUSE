@@ -45,12 +45,12 @@ export default function PropertyCard({ property, index = 0 }) {
         </div>
 
         <div className="p-6">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#748c70]">
+          <p className="mt-3 font-heading text-2xl font-extrabold tracking-tight text-[#0a192f]">
             {property.location}
           </p>
-          <h3 className="mt-2 font-heading text-xl font-bold text-[#0a192f]">
+          <h4 className="mt-2 font-heading font-bold text-[#0a192f]">
             {property.title}
-          </h3>
+          </h4>
 
           <p className="mt-3 font-heading text-2xl font-extrabold tracking-tight text-[#0a192f]">
             {property.area}

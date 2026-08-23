@@ -12,10 +12,14 @@ const NAV = [
 ];
 
 export default function Footer() {
+  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    BRAND.address,
+  )}`;
+
   return (
     <footer
       data-testid="footer"
-      className="bg-[#0a192f] border-t border-white/20 py-10 text-white md:py-12"
+      className="border-t border-white/20 bg-[#0a192f] py-10 text-white md:py-12"
     >
       {/* Main container */}
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
@@ -66,6 +70,7 @@ export default function Footer() {
             </h4>
 
             <ul className="mt-5 space-y-3 text-sm text-white/70">
+              {/* Email */}
               <li>
                 <a
                   href={`mailto:${BRAND.email}`}
@@ -75,6 +80,7 @@ export default function Footer() {
                 </a>
               </li>
 
+              {/* Phone */}
               <li>
                 <a
                   href={`tel:${BRAND.phone.replace(/\s+/g, "")}`}
@@ -84,22 +90,26 @@ export default function Footer() {
                 </a>
               </li>
 
-              <li className="mt-2 leading-relaxed text-white/50">
-                {BRAND.address}
+              {/* Address */}
+              <li>
+                <a
+                  href={mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 block leading-relaxed text-white/50 transition-colors duration-300 hover:text-[#d4e0b3]"
+                >
+                  {BRAND.address}
+                </a>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 flex flex-col items-center justify-between gap-3 border-t border-white/10 py-7 text-center text-xs text-white/40 md:flex-row md:text-left">
+        <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-white/10 py-7 text-center text-xs text-white/40 md:flex-row md:text-left">
           <p>
             © {new Date().getFullYear()} {BRAND.name}. Built for growing
             businesses.
-          </p>
-
-          <p>
-            Commercial &amp; Industrial Properties · Privacy · Terms
           </p>
         </div>
       </div>

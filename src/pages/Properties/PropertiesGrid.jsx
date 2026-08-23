@@ -4,7 +4,7 @@ import { Reveal } from '../../components/Reveal.jsx'
 export default function PropertiesGrid({ properties }) {
   return (
     <section data-testid="properties-grid" className="scroll-mt-12 bg-[#f9fafb] px-5 py-10 md:px-10 md:py-12">
-      <div className="mx-auto max-w-350">
+      <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-4">
             <h2 className="max-w-5xl font-heading text-3xl font-extrabold leading-tight tracking-tight text-[#0a192f] md:text-5xl">
@@ -19,7 +19,7 @@ export default function PropertiesGrid({ properties }) {
         </Reveal>
 
         {properties.length === 0 ? (
-          <div data-testid="no-properties" className="mt-16 rounded-3xl border border-black/6 bg-white p-12 text-center">
+          <div data-testid="no-properties" className="mt-8 rounded-3xl border border-black/6 bg-white p-12 text-center">
             <p className="font-heading text-xl font-bold text-[#0a192f]">No properties match your current filters.</p>
             <p className="mt-3 text-base text-[#4b5563]">Try clearing or adjusting the filters above.</p>
           </div>

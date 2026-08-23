@@ -9,9 +9,9 @@ export default function PropertyOverview({ property }) {
           <Overline>Property Overview</Overline>
           <div className="mt-6 flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
             <div className="flex-1">
-              <h1 className="font-heading text-3xl font-extrabold leading-tight tracking-tight text-[#0a192f] md:text-5xl">
+              <h2 className="font-heading text-3xl font-extrabold leading-tight tracking-tight text-[#0a192f] md:text-5xl">
                 {property.title}
-              </h1>
+              </h2>
               <p className="mt-4 inline-flex items-center gap-2 text-base leading-relaxed text-[#4b5563] md:text-lg">
                 <MapPin className="h-4 w-4 text-[#748c70]" />
                 {property.location}
@@ -40,11 +40,11 @@ export default function PropertyOverview({ property }) {
             </div>
 
             <div className="flex flex-col items-start gap-2 lg:items-end">
-              <p className="font-heading text-3xl font-extrabold tracking-tight text-[#0a192f] md:text-4xl">
+              <h4 className="font-heading text-3xl font-extrabold tracking-tight text-[#0a192f]">
                 {property.price || 'On request'}
-              </p>
+              </h4>
               {property.area && (
-                <p className="text-sm font-semibold text-[#748c70]">{property.area}</p>
+                <p className="text-md font-semibold text-[#748c70]">{property.area}</p>
               )}
             </div>
           </div>

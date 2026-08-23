@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { BRAND } from "../../data/properties.js";
 
-const FORM_ENDPOINT = "https://formsubmit.co/YOUR_EMAIL@example.com";
+const FORM_ENDPOINT = `https://formsubmit.co/${BRAND.email}`;
 
 export default function Form() {
   const [submitted, setSubmitted] = useState(false);

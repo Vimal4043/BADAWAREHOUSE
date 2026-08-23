@@ -53,8 +53,8 @@ import khopoli11 from "../assets/properties/khopoli/khopoli-11.jpeg";
 export const BRAND = {
   name: "BADAWAREHOUSE",
   tagline: "Commercial & Industrial",
-  phone: "08048782038",
-  email: "alokenterprises20@gmail.com",
+  phone: "1234567890",
+  email: "badawarehouse@gmail.com",
   address:
     "629, 6th Floor, A 4 Building, Silver Spring, Opp Dena Bank, Taloja MIDC, Panvel, Navi Mumbai, Maharashtra - 410208, India",
 };
@@ -80,6 +80,8 @@ export const PROPERTIES = [
     id: "taloja-midc-rcc-building",
     title: "RCC Commercial Building",
     location: "Taloja MIDC",
+    locationLink:
+      "https://www.google.com/maps/search/?api=1&query=Taloja+MIDC+Panvel+Maharashtra",
     city: "Taloja",
     state: "Maharashtra",
     type: "Industrial Building",
@@ -159,6 +161,8 @@ export const PROPERTIES = [
     id: "kansal-village-industrial-land",
     title: "4.5 Acre Industrial Freehold Land",
     location: "Kansal Village · Sudhagad · Raigad",
+    locationLink:
+      "https://www.google.com/maps/search/?api=1&query=Kansal+Village+Sudhagad+Raigad+Maharashtra",
     city: "Kansal Village",
     state: "Maharashtra",
     type: "Industrial Land",
@@ -201,6 +205,8 @@ export const PROPERTIES = [
     id: "building-c1-bhiwandi-warehouse",
     title: "Building C1 — Industrial Warehouse",
     location: "Bhiwandi",
+    locationLink:
+      "https://www.google.com/maps/search/?api=1&query=Bhiwandi+Maharashtra",
     city: "Bhiwandi",
     state: "Maharashtra",
     type: "Warehouse",
@@ -240,6 +246,8 @@ export const PROPERTIES = [
     id: "khopoli-pen-road-warehouse",
     title: "70,000 sq ft Warehouse",
     location: "Khopoli-Pen Road",
+    locationLink:
+      "https://www.google.com/maps/search/?api=1&query=Khopoli-Pen+Road+Maharashtra",
     city: "Khopoli",
     state: "Maharashtra",
     type: "Warehouse",
