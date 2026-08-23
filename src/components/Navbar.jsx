@@ -51,7 +51,7 @@ export default function Navbar() {
       {/* =========================================================
           MAIN NAVBAR
       ========================================================= */}
-      <div className="mx-auto flex h-[76px] w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-19 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Brand */}
         <Brand />
 
@@ -98,7 +98,7 @@ export default function Navbar() {
             aria-label={`Call ${BRAND.phone}`}
             className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#748c70] text-white transition-colors duration-300 hover:bg-[#5f7a5c] sm:h-11 sm:w-11"
           >
-            <Phone className="h-4 w-4 sm:h-[18px] sm:w-[18px]" />
+            <Phone className="h-4 w-4 sm:h-4.5 sm:w-4.5" />
           </a>
 
           {/* Menu */}
@@ -126,12 +126,12 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-[60] flex min-h-screen flex-col overflow-y-auto bg-white text-[#0a192f] xl:hidden"
+            className="fixed inset-0 z-60 flex min-h-screen flex-col overflow-y-auto bg-white text-[#0a192f] xl:hidden"
           >
             {/* -----------------------------------------------------
                 MENU HEADER
             ----------------------------------------------------- */}
-            <div className="mx-auto flex h-[76px] w-full max-w-7xl shrink-0 items-center justify-between px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto flex h-19 w-full max-w-7xl shrink-0 items-center justify-between px-4 sm:px-6 lg:px-8">
               <Brand onClick={() => setOpen(false)} />
 
               <button
