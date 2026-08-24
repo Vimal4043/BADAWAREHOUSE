@@ -13,8 +13,8 @@ const INFO = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+91 08048782038",
-    href: "tel:+9108048782038",
+    value: "+91 9152249666",
+    href: "tel:+919152249666",
   },
   {
     icon: Mail,

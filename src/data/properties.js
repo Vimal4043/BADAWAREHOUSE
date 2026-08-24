@@ -53,7 +53,7 @@ import khopoli11 from "../assets/properties/khopoli/khopoli-11.jpeg";
 export const BRAND = {
   name: "BADAWAREHOUSE",
   tagline: "Commercial & Industrial",
-  phone: "08048782038",
+  phone: "9152249666",
   email: "alokenterprises20@gmail.com",
   altemail: "nit9442@gmail.com",
   website: "https://www.badawarehouse.com",

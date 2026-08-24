@@ -14,10 +14,10 @@ export default function ContactCTA() {
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
-              href="tel:08048782038"
+              href="tel:9152249666"
               className="inline-flex items-center gap-2 rounded-full bg-[#748c70] px-7 py-3.5 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#5f7a5c]"
             >
-              Call +91 08048782038
+              Call +91 9152249666
             </a>
             <a
               href="mailto:alokenterprises20@gmail.com"
