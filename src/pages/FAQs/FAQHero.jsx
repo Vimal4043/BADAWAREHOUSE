@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
+import faqHero from '../../assets/faqHero.avif'
 
-const HERO_IMG =
-  'https://images.unsplash.com/photo-1600566753086-00f18f6b0050?w=1800&q=80&auto=format&fit=crop'
+const HERO_IMG = faqHero;
 
 const container = {
   hidden: {},
@@ -21,7 +21,7 @@ export default function FAQHero() {
   return (
     <section
       data-testid="faq-hero"
-      className="relative flex min-h-[50vh] items-center justify-center overflow-hidden md:min-h-[60vh]"
+      className="relative flex min-h-[60vh] items-center justify-center overflow-hidden md:min-h-[70vh]"
     >
       <motion.img
         src={HERO_IMG}

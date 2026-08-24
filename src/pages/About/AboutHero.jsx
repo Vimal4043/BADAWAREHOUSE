@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
+import aboutHero from '../../assets/aboutHero.avif'
 
-const HERO_IMG =
-  'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1800&q=80&auto=format&fit=crop'
+const HERO_IMG = aboutHero;
 
 const container = {
   hidden: {},

@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import homeAbout from "../../assets/homeAbout.avif";
 
-const ABOUT_IMG =
-  "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1600&q=85&auto=format&fit=crop";
+const ABOUT_IMG = homeAbout;
 
 export default function AboutUs() {
   return (

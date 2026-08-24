@@ -1,5 +1,6 @@
 import { Reveal, Overline } from "../../components/Reveal.jsx";
 import { BRAND } from "../../data/properties.js";
+import contactMap from "../../assets/contactMap.avif";
 
 export default function ContactMap() {
   return (
@@ -18,7 +19,7 @@ export default function ContactMap() {
         <div className="mt-16 overflow-hidden rounded-3xl border border-black/6">
           <div className="relative aspect-video w-full bg-[#f9fafb]">
             <img
-              src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1600&q=80&auto=format&fit=crop"
+              src={contactMap}
               alt="Map placeholder"
               className="h-full w-full object-cover opacity-80"
               loading="lazy"

@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import homeHero from "../../assets/homeHero.avif";
 
-const HERO_IMG =
-  "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1800&q=80&auto=format&fit=crop";
+const HERO_IMG = homeHero;
 
 const container = {
   hidden: {},

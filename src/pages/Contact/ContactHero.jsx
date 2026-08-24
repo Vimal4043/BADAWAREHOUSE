@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
+import contactHero from '../../assets/contactHero.avif'
 
-const HERO_IMG =
-  'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1800&q=80&auto=format&fit=crop'
+const HERO_IMG = contactHero;
 
 const container = {
   hidden: {},
@@ -21,7 +21,7 @@ export default function ContactHero() {
   return (
     <section
       data-testid="contact-hero"
-      className="mt-15 relative flex min-h-[50vh] items-center justify-center overflow-hidden md:min-h-[60vh]"
+      className="relative flex min-h-[60vh] items-center justify-center overflow-hidden md:min-h-[70vh]"
     >
       <motion.img
         src={HERO_IMG}
